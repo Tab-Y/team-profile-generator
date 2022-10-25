@@ -2,5 +2,28 @@
   "dependencies": {
     "inquirer": "^8.2.4",
     "jest": "^24.9.0"
-  }
+  },
+  "name": "1-010_module-10-team-profile-generator",
+  "description": "![License](https://img.shields.io/badge/License-mit-blue)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tab-Y/team-profile-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tab-Y/team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/Tab-Y/team-profile-generator#readme"
 }
