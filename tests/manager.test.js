@@ -1,0 +1,1 @@
+// this is where the tests for the manager class will go
