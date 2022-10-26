@@ -19,3 +19,37 @@
 // THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
 // WHEN I decide to finish building my team
 // THEN I exit the application, and the HTML is generated
+
+
+const inquirer = require('inquirer');
+const fs = require('fs');
+const generateHtml = require('./src/generatehtml');
+const generateReset = require('./src/generatereset');
+const generateStyle = require('./src/generatestyle');
+const generateScript = require('./src/generatescript');
+
+
+
+const questions = [
+    {
+        type: 'input',
+        message: 'What is the title of your README?',
+        name: 'title',
+    },
+
+];
+
+
+
+
+function init() {
+    inquirer
+        .prompt(questions)
+        .then((data) => {
+            const fileName = `README.md`;
+        },
+        )
+};
+
+
+init();
