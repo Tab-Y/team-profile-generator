@@ -1,34 +1,50 @@
-// Neon style pallette
-// --lightback: rgb(190, 211, 238);   /* change these for different palettes */
-// --darkback: rgb(5, 19, 36);     /* change these for different palettes */
-// --darkbackcircle: rgb(49, 62, 78);      /* change these for different palettes */
-// --accent: rgb(243, 60, 197);        /* change these for different palettes */
-// --white: rgba(236, 252, 248, 0.979);        /* change these for different palettes */
+function generateStyle(style) {
+    let chosenStyle = [];
 
-// monotone
-// --lightback: rgb(224, 224, 224);   /* change these for different palettes */
-// --darkback: rgb(30, 31, 32);     /* change these for different palettes */
-// --darkbackcircle: rgb(111, 119, 128);      /* change these for different palettes */
-// --accent: rgb(180, 167, 150);        /* change these for different palettes */
-// --white: rgba(250, 250, 250, 0.979);        /* change these for different palettes */
+    switch (style) {
+        case 'Monotone':
+            let monotone = `
+            --lightback: rgb(224, 224, 224);   /* change these for different palettes */
+            --darkback: rgb(30, 31, 32);     /* change these for different palettes */
+            --darkbackcircle: rgb(111, 119, 128);      /* change these for different palettes */
+            --accent: rgb(180, 167, 150);        /* change these for different palettes */
+            --white: rgba(250, 250, 250, 0.979);        /* change these for different palettes */
+            `
+            chosenStyle.push(monotone);
+            break;
+        case 'Neon':
+            let neon = `
+            --lightback: rgb(190, 211, 238);   /* change these for different palettes */
+            --darkback: rgb(5, 19, 36);     /* change these for different palettes */
+            --darkbackcircle: rgb(49, 62, 78);      /* change these for different palettes */
+            --accent: rgb(243, 60, 197);        /* change these for different palettes */
+            --white: rgba(236, 252, 248, 0.979);        /* change these for different palettes */
+            `
+            chosenStyle.push(neon);
+            break;
+        case 'Thermal':
+            let thermal = `
+            --lightback: rgb(252, 252, 5);   /* change these for different palettes */
+            --darkback: rgb(2, 20, 13);     /* change these for different palettes */
+            --darkbackcircle: rgb(9, 11, 129);      /* change these for different palettes */
+            --accent: rgb(221, 44, 13);        /* change these for different palettes */
+            --white: rgba(250, 250, 250, 0.979);        /* change these for different palettes */
+            `
+            chosenStyle.push(thermal);
+            break;
+        case 'Inversion':
+            let inversion = `
+            --lightback: rgb(48, 47, 47);   /* change these for different palettes */
+            --darkback: rgb(202, 243, 227);     /* change these for different palettes */
+            --darkbackcircle: rgb(112, 114, 243);      /* change these for different palettes */
+            --accent: rgb(164, 184, 132);        /* change these for different palettes */
+            --white: rgba(19, 19, 19, 0.979);        /* change these for different palettes */
+            `
+            chosenStyle.push(inversion);
+            break;
+    }
 
-// thermal
-// --lightback: rgb(252, 252, 5);   /* change these for different palettes */
-// --darkback: rgb(2, 20, 13);     /* change these for different palettes */
-// --darkbackcircle: rgb(9, 11, 129);      /* change these for different palettes */
-// --accent: rgb(221, 44, 13);        /* change these for different palettes */
-// --white: rgba(250, 250, 250, 0.979);        /* change these for different palettes */
 
-// inversion
-// --lightback: rgb(48, 47, 47);   /* change these for different palettes */
-// --darkback: rgb(202, 243, 227);     /* change these for different palettes */
-// --darkbackcircle: rgb(112, 114, 243);      /* change these for different palettes */
-// --accent: rgb(164, 184, 132);        /* change these for different palettes */
-// --white: rgba(19, 19, 19, 0.979);        /* change these for different palettes */
-
-
-function generateCss(data) {
-    const { name, id, email, school, github, officeNumber } = data;
     return `
     /* this is the template for the CSS Style to be generated */
 
@@ -38,11 +54,7 @@ function generateCss(data) {
      */
     
     :root {
-        --lightback: rgb(190, 211, 238);   /* change these for different palettes */
-        --darkback: rgb(5, 19, 36);     /* change these for different palettes */
-        --darkbackcircle: rgb(49, 62, 78);      /* change these for different palettes */
-        --accent: rgb(243, 60, 197);        /* change these for different palettes */
-        --white: rgba(236, 252, 248, 0.979);        /* change these for different palettes */
+  ${chosenStyle}
     }
     body.container-fluid {
         padding: 0;
@@ -84,7 +96,7 @@ function generateCss(data) {
 };
 
 function writeToFile(fileName, data) {
-    fs.writeFile(`../dist/${fileName}`, generateHtml(data), (err) =>
+    fs.writeFile(`../dist/${styleName}`, generateHtml(data), (err) =>
         err ? console.error(err) : console.log('style created')
     )
 };
@@ -94,7 +106,7 @@ function init() {
         .prompt(questions)
         .then((data) => {
             console.log(data)
-            const fileName = `style.css`;
+            const styleName = `style.css`;
             writeToFile(fileName, data);
         })
 };

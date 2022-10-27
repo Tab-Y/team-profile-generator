@@ -110,7 +110,7 @@ function init() {
     .prompt(questions)
     .then((data) => {
         console.log(data)
-        const fileName = `index.html`;
+        const fileName = `team.html`;
         writeToFile(fileName, data);
     })
 };
