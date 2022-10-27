@@ -8,12 +8,12 @@
     
     :root {
   
-            /* neon */
-            --lightback: rgb(190, 211, 238);   /* change these for different palettes */
-            --darkback: rgb(5, 19, 36);     /* change these for different palettes */
-            --darkbackcircle: rgb(49, 62, 78);      /* change these for different palettes */
-            --accent: rgb(243, 60, 197);        /* change these for different palettes */
-            --white: rgba(236, 252, 248, 0.979);        /* change these for different palettes */
+            /* monotone */
+            --lightback: rgb(224, 224, 224);   /* change these for different palettes */
+            --darkback: rgb(30, 31, 32);     /* change these for different palettes */
+            --darkbackcircle: rgb(111, 119, 128);      /* change these for different palettes */
+            --accent: rgb(180, 167, 150);        /* change these for different palettes */
+            --white: rgba(250, 250, 250, 0.979);        /* change these for different palettes */
             
     }
     body.container-fluid {

@@ -115,7 +115,7 @@ function writeStyle (style) {
 // Starts to generate reset
 function writeReset () {
     fs.writeFile(`./dist/reset.css`, generateReset(), (err) =>
-    err ? console.error(err) : console.log('style created')
+    err ? console.error(err) : console.log('reset created')
     )
 };
 
