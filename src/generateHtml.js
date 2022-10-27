@@ -1,7 +1,7 @@
 function generateHtml(teamMembers) {
     const employeeCards = [];
     function setCards() {
-
+        // makes the html with input for the manager card
         function managerCard(manager) {
             let mgrCard = `
         <div class="card col-xl-2 col-lg-3 col-md-5 col-sm-10 col-10 shadow" style="width: 18rem">
@@ -20,7 +20,7 @@ function generateHtml(teamMembers) {
         `
             employeeCards.push(mgrCard)
         };
-
+        // makes html for each engineer within the team members array
         function engineerCard(engineer) {
             let engCard = `
         <div class="card col-xl-2 col-lg-3 col-md-5 col-sm-10 col-10 shadow" style="width: 18rem">
@@ -39,7 +39,7 @@ function generateHtml(teamMembers) {
         `
             employeeCards.push(engCard);
         };
-
+        // makes html for each intern on the team
         function internCard(intern) {
             let internCard = `
         <div class="card col-xl-2 col-lg-3 col-md-5 col-sm-10 col-10 shadow" style="width: 18rem">
@@ -58,7 +58,7 @@ function generateHtml(teamMembers) {
             `
             employeeCards.push(internCard);
         };
-
+        // loop to go through each object in the teamMembers array
         for (let i = 0; i < teamMembers.length; i++) {
             if (teamMembers[i].getRole() === 'Manager') {
                 managerCard(teamMembers[i]);
@@ -70,7 +70,7 @@ function generateHtml(teamMembers) {
                 internCard(teamMembers[i]);
             }
         };
-
+        // creates one html string to be added into the team html
         return employeeCards.join('');
     };
     setCards();

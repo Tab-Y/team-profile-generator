@@ -1,6 +1,6 @@
 function generateStyle(style) {
     let chosenStyle = [];
-
+// different style choices for page to generate
     switch (style) {
         case 'Monotone':
             let monotone = `
@@ -48,7 +48,7 @@ function generateStyle(style) {
             break;
     }
 
-
+// the custom css style sheet
     return `
     /* this is the template for the CSS Style to be generated */
 

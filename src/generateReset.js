@@ -1,5 +1,5 @@
 function generateReset() {
-    
+    // css reset for browser compatability
     return`
     /* this is the template for the CSS reset to be generated */
 * {
