@@ -124,7 +124,6 @@ function customStyle() {
     .prompt(customCss)
     .then((data) => {
         const style = data.style;
-        console.log(style)
         writeStyle(style);
         writeReset();
         writeHtml(teamMembers);
