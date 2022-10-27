@@ -8,7 +8,9 @@ const fs = require('fs');
 const DIST_DIR = path.resolve(__dirname, 'dist');  //gets the absolute path to directory 'dist'
 const distPath = path.join(DIST_DIR, 'team.html'); //adds team.html to the end of the path
 
-const generateWebpage = require('./src/generateWebpage');
+const generateHtml = require('./src/generateHtml');
+const generateStyle = require('./src/generateStyle');
+const generateReset = require('./src/generateReset');
 
 const teamMembers = []; //empty array to hold each created team member to generate cards
 
@@ -100,19 +102,19 @@ const customCss = [
 
 // starts to generate HTML
 function writeHtml(teamMembers) {
-    fs.writeFile(`../dist/team.html`, generateHtml(teamMembers), (err) =>
+    fs.writeFile(`./dist/team.html`, generateHtml(teamMembers), (err) =>
         err ? console.error(err) : console.log('HTML created')
     )
 };
 // starts to generate CSS
 function writeStyle (style) {
-    fs.writeFile(`../dist/style.css`, generateStyle(style), (err) =>
+    fs.writeFile(`./dist/style.css`, generateStyle(style), (err) =>
     err ? console.error(err) : console.log('style created')
     )
 };
 // Starts to generate reset
 function writeReset () {
-    fs.writeFile(`../dist/reset.css`, generateReset(), (err) =>
+    fs.writeFile(`./dist/reset.css`, generateReset(), (err) =>
     err ? console.error(err) : console.log('style created')
     )
 };
@@ -122,6 +124,7 @@ function customStyle() {
     .prompt(customCss)
     .then((data) => {
         const style = data.style;
+        console.log(style)
         writeStyle(style);
         writeReset();
         writeHtml(teamMembers);

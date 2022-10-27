@@ -1,4 +1,7 @@
-/* this is the template for the CSS reset to be generated */
+function generateReset() {
+    
+    return`
+    /* this is the template for the CSS reset to be generated */
 * {
     margin: 0;
     padding: 0;
@@ -28,3 +31,7 @@ input, select, option, optgroup, textarea, button, pre, code {
 ol, ul {
     list-style: none;
 }
+    `
+};
+
+module.exports = generateReset;
