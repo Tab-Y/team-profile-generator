@@ -8,10 +8,7 @@ const fs = require('fs');
 const DIST_DIR = path.resolve(__dirname, 'dist');  //gets the absolute path to directory 'dist'
 const distPath = path.join(DIST_DIR, 'team.html'); //adds team.html to the end of the path
 
-const generateHtml = require('./src/generatehtml');
-const generateReset = require('./src/generatereset');
-const generateStyle = require('./src/generatestyle');
-const generateScript = require('./src/generatescript');
+const generateWebpage = require('./src/generateWebpage');
 
 const teamMembers = []; //empty array to hold each created team member to generate cards
 
@@ -101,18 +98,25 @@ const customCss = [
     }
 ];
 
-
-
+// starts to generate HTML
+function writeHtml(teamMembers) {
+    fs.writeFile(`../dist/team.html`, generateHtml(teamMembers), (err) =>
+        err ? console.error(err) : console.log('HTML created')
+    )
+};
+// starts to generate CSS
 function writeStyle (style) {
     fs.writeFile(`../dist/style.css`, generateStyle(style), (err) =>
     err ? console.error(err) : console.log('style created')
     )
 };
+// Starts to generate reset
 function writeReset () {
     fs.writeFile(`../dist/reset.css`, generateReset(), (err) =>
     err ? console.error(err) : console.log('style created')
     )
 };
+
 function customStyle() {
     inquirer
     .prompt(customCss)
@@ -120,6 +124,7 @@ function customStyle() {
         const style = data.style;
         writeStyle(style);
         writeReset();
+        writeHtml(teamMembers);
 
 
     
@@ -134,7 +139,8 @@ function internQuestion() {
         teamMembers.push(intern);
         menu();
     })
-}
+};
+
 function engineerQuestion() {
     inquirer
     .prompt(engineerQuestions)
@@ -143,7 +149,7 @@ function engineerQuestion() {
         teamMembers.push(engineer)
         menu();
     })
-}
+};
 
 function menu() {
     inquirer
@@ -160,9 +166,6 @@ function menu() {
             case 'No more employees':
                 customStyle();
                 break;
-
-
-
         }
     })
 };
@@ -177,7 +180,6 @@ function init() {
         },
         )
 };
-
 
 init();
 
