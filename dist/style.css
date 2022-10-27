@@ -8,11 +8,11 @@
     
     :root {
   
-            /* monotone */
-            --lightback: rgb(224, 224, 224);   /* change these for different palettes */
-            --darkback: rgb(30, 31, 32);     /* change these for different palettes */
-            --darkbackcircle: rgb(111, 119, 128);      /* change these for different palettes */
-            --accent: rgb(180, 167, 150);        /* change these for different palettes */
+            /* thermal */
+            --lightback: rgb(252, 252, 5);   /* change these for different palettes */
+            --darkback: rgb(2, 20, 13);     /* change these for different palettes */
+            --darkbackcircle: rgb(9, 11, 129);      /* change these for different palettes */
+            --accent: rgb(221, 44, 13);        /* change these for different palettes */
             --white: rgba(250, 250, 250, 0.979);        /* change these for different palettes */
             
     }

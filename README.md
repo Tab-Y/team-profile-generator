@@ -26,7 +26,10 @@ Creates a webpage for employees based on inputs using module inquirer.
 ![start screenshot](./assets/img/Screenshot-1.png)
 ![questions screenshot](./assets/img/Screenshot-2.png)
 ![CSS screenshot](./assets/img/Screenshot-3.png) 
-[![site screenshot](./assets/img/Screenshot-site.png)](https://app.castify.com/view/ea8438d1-44be-46c0-9f7c-cc353807a1da)"Click on this image to view walkthrough video"
+[![Site CSS variation inversion](./assets/img/Screenshot-site-1.png)](https://app.castify.com/view/ea8438d1-44be-46c0-9f7c-cc353807a1da)"Click on this image to view walkthrough video"
+![Site CSS variation monocolor](./assets/img/Screenshot-site-2.png)
+![Site CSS variation neon](./assets/img/Screenshot-site-3.png)
+![Site CSS Variation thermal](./assets/img/Screenshot-site-4.png)
 
 ## Credits 
 
